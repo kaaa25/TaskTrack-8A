@@ -1,14 +1,13 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
 using namespace std;
 
+// Fungsi Tambah Tugas
 void tambahTugas() {
     string namaTugas, deadline, prioritas;
     int nilaiPrioritas;
 
-    // Buang newline pertama (tanpa cin.ignore())
     getline(cin, namaTugas);
 
     cout << "Masukkan nama tugas: ";
@@ -17,7 +16,6 @@ void tambahTugas() {
     cout << "Masukkan deadline (contoh: 2025-11-15): ";
     getline(cin, deadline);
 
-    // Validasi prioritas (1-3)
     while (true) {
         cout << "Masukkan prioritas:\n"; 
         cout << "1. Tinggi\n";
@@ -32,12 +30,10 @@ void tambahTugas() {
         cout << "Prioritas tidak valid! Coba lagi.\n";
     }
 
-    // Ubah angka ke teks
     if (nilaiPrioritas == 1) prioritas = "Tinggi";
     else if (nilaiPrioritas == 2) prioritas = "Sedang";
     else prioritas = "Rendah";
 
-    // Simpan ke file
     ofstream file("tugas.txt", ios::app);
     file << namaTugas << " | " << deadline << " | " << prioritas << endl;
     file.close();
@@ -45,6 +41,7 @@ void tambahTugas() {
     cout << "Tugas berhasil disimpan!\n";
 }
 
+// Fungsi Lihat Tugas
 void lihatTugas() {
     ifstream file("tugas.txt");
     string baris;
@@ -68,12 +65,14 @@ void lihatTugas() {
     file.close();
 }
 
+// Fungsi Hapus Tugas
 void hapusSemuaTugas() {
     ofstream file("tugas.txt", ios::trunc);
     file.close();
     cout << "Semua tugas berhasil dihapus!\n";
 }
 
+// Fungsi Utama
 int main() {
     int pilihan;
 
@@ -95,3 +94,4 @@ int main() {
 
     return 0;
 }
+
