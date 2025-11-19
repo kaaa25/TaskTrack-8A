@@ -29,7 +29,7 @@ void tambahTugas() {
 
         cout << "Prioritas tidak valid! Coba lagi.\n";
     }
-
+// Looping untuk prioritas
     if (nilaiPrioritas == 1) prioritas = "Tinggi";
     else if (nilaiPrioritas == 2) prioritas = "Sedang";
     else prioritas = "Rendah";
