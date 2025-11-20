@@ -12,7 +12,7 @@ int tambahTugas() {
     string namaTugas, deadline, prioritas;
     int nilaiPrioritas;
 
-    getline(cin, namaTugas); //memberihkan buffer dari cin
+    getline(cin, namaTugas); //membersihkan buffer dari cin
 
     cout << "Masukkan nama tugas: ";
     getline(cin, namaTugas);
@@ -20,6 +20,7 @@ int tambahTugas() {
     cout << "Masukkan deadline (contoh: 2025-11-15): ";
     getline(cin, deadline);
 
+    //untuk mentrol looping
     bool valid = false;
 
     while (!valid) {
@@ -40,7 +41,7 @@ int tambahTugas() {
             cout << "Input tidak valid!\n\n";
         }
     }
-
+    //menggunakan fungsi dari <fstream>
     ofstream file("tugas.txt", ios::app);
     file << namaTugas << " | " << deadline << " | " << prioritas << endl;
     file.close();
@@ -48,4 +49,3 @@ int tambahTugas() {
     return 1;
 }
 //bagian mcihael
-
