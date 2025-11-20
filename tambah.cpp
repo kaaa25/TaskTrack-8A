@@ -1,18 +1,16 @@
-/*
-input library yang akan digunakan
-kedalam Function nya
-*/
-#include <iostream>   
+// input library yang akan digunakan
+#include <iostream>
 #include <fstream>
 #include <string>
 using namespace std;
 
 int tambahTugas() {
-    // deklarasi varabel 
+    // deklarasi variabel
     string namaTugas, deadline, prioritas;
-    int nilaiPrioritas;
+    string inputPrioritas;
+    string pilihan[3] = {"1", "2", "3"};  
 
-    getline(cin, namaTugas); //membersihkan buffer dari cin
+    getline(cin, namaTugas); // membersihkan buffer
 
     cout << "Masukkan nama tugas: ";
     getline(cin, namaTugas);
@@ -20,7 +18,6 @@ int tambahTugas() {
     cout << "Masukkan deadline (contoh: 2025-11-15): ";
     getline(cin, deadline);
 
-    //untuk mentrol looping
     bool valid = false;
 
     while (!valid) {
@@ -29,23 +26,30 @@ int tambahTugas() {
         cout << "2. Sedang\n";
         cout << "3. Rendah\n";
         cout << "Pilih menu [1/2/3]: ";
-        cin >> nilaiPrioritas;
 
-        if (nilaiPrioritas >= 1 && nilaiPrioritas <= 3) {
-            switch (nilaiPrioritas) {
-                case 1: prioritas = "Tinggi"; valid = true; break;
-                case 2: prioritas = "Sedang"; valid = true; break;
-                case 3: prioritas = "Rendah"; valid = true; break;
-            }
-        } else {
+        cin >> inputPrioritas;
+
+        if (inputPrioritas == pilihan[0]) {
+            prioritas = "Tinggi";
+            valid = true;
+        }
+        else if (inputPrioritas == pilihan[1]) {
+            prioritas = "Sedang";
+            valid = true;
+        }
+        else if (inputPrioritas == pilihan[2]) {
+            prioritas = "Rendah";
+            valid = true;
+        }
+        else {
             cout << "Input tidak valid!\n\n";
         }
+
     }
-    //menggunakan fungsi dari <fstream>
+
     ofstream file("tugas.txt", ios::app);
     file << namaTugas << " | " << deadline << " | " << prioritas << endl;
     file.close();
 
     return 1;
 }
-//bagian mcihael
