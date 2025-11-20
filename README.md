@@ -1,5 +1,5 @@
 # TaskTrack-8A
-## TaskTrack: Program Pencatatan dan Pengelolaan Tugas Harian
+## TaskTrack : Program Pencatatan dan Pengelolaan Tugas Harian
 Banyak mahasiswa maupun pekerja sering kewalahan karena tidak memiliki sistem yang teratur untuk mencatat, mengatur, dan memprioritaskan tugas. Akibatnya, beberapa tugas sering terlupa, dikerjakan terlambat, atau bahkan terlewat sama sekali. Berdasarkan permasalahan tersebut, kami membuat sebuah program To-Do List yang dapat membantu pengguna mencatat dan mengelola tugas secara lebih terstruktur.
 
 Program ini merupakan aplikasi sederhana berbasis C++ yang menggunakan konsep modular programming serta _file handling_. Seluruh data tugas disimpan pada file teks `tugas.txt`, sehingga pengguna dapat menambah, melihat, mencari, maupun menghapus tugas dengan mudah dan terorganisir. Dengan adanya program ini, diharapkan tidak ada lagi tugas yang terlewat dan pengguna dapat mengatur prioritas pekerjaan secara lebih efektif.
